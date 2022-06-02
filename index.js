@@ -1,13 +1,28 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  const seenNumbers = {};
+  for (const number of array) {
+    const difference = target - number;
+    if (seenNumbers[difference]) {
+      return true;
+    }
+    seenNumbers[number] = true;
+  }
+  return false;
+
 }
 
 /* 
   Write the Big O time complexity of your function here
+  Big O: O(n^2)
 */
 
 /* 
   Add your pseudocode here
+    1. create a variable called sum and set it to 0
+  2. loop through the array
+  3. add each element to the sum variable
+  4. if the sum variable is equal to the target variable, return true
+  5. else return false
 */
 
 /*
